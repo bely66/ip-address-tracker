@@ -1,11 +1,6 @@
 <template>
- <div class="ip-tracker-page">
-  <div fluid class="header">
-    <div class="ip-search-bar">
-      <SearchBar />
-    </div>
-  </div>
-  <div class="map-section">
+
+  <div >
     <l-map
       :zoom="zoom"
       :center="center"
@@ -28,23 +23,18 @@
       </l-control>
     </l-map>
   </div>
-  </div>
 </template>
 
 <script>
-import SearchBar from './components/SearchBar.vue'
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LControl } from "vue2-leaflet";
 
-
-
 export default {
-  name: 'App',
+  name: "Example",
   components: {
-    SearchBar,
     LMap,
     LTileLayer,
-    LControl,
+    LControl
   },
   data() {
     return {
@@ -63,30 +53,7 @@ export default {
 };
 </script>
 
-<style>
-.ip-tracker-page{
-  display: grid;
-}
-
-.header{
-  position: absolute;
-  top:0;
-  right:0;
-  left:0;
-  margin:0;
-  width: 100%;
-  height: 17em;
-  background-image: url(assets/pattern-bg.png);
-  align-content: center;
-  align-items: center;
-}
-
-.ip-search-bar{
-  position: relative;
-  padding: 6em;
-}
-
-
+<style scoped>
 .example-custom-control {
   background: #fff;
   padding: 0 0.5em;
